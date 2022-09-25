@@ -41,7 +41,7 @@
             amazon2cis_legacy_boot: false
         when:
             - amazon2cis_efi_boot.stat.exists
-            - ansible_distribution = 'CentOS'  # Note: rhel & OEL both use redhat path
+            - ansible_distribution == 'CentOS'  # Note: rhel & OEL both use redhat path
 
       - name: "PRELIM | set fact if UEFI boot | Amazon Linux 2 "
         set_fact:
